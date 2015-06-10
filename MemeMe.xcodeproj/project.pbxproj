@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22592C961B289D2E00E1AAC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22592C951B289D2E00E1AAC4 /* AppDelegate.swift */; };
-		22592C981B289D2E00E1AAC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22592C971B289D2E00E1AAC4 /* ViewController.swift */; };
+		22592C981B289D2E00E1AAC4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22592C971B289D2E00E1AAC4 /* ImageViewController.swift */; };
 		22592C9B1B289D2E00E1AAC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22592C991B289D2E00E1AAC4 /* Main.storyboard */; };
 		22592C9D1B289D2E00E1AAC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22592C9C1B289D2E00E1AAC4 /* Images.xcassets */; };
 		22592CA01B289D2E00E1AAC4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22592C9E1B289D2E00E1AAC4 /* LaunchScreen.xib */; };
@@ -29,7 +29,7 @@
 		22592C901B289D2E00E1AAC4 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22592C941B289D2E00E1AAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22592C951B289D2E00E1AAC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22592C971B289D2E00E1AAC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22592C971B289D2E00E1AAC4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		22592C9A1B289D2E00E1AAC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22592C9C1B289D2E00E1AAC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22592C9F1B289D2E00E1AAC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				22592C951B289D2E00E1AAC4 /* AppDelegate.swift */,
-				22592C971B289D2E00E1AAC4 /* ViewController.swift */,
+				22592C971B289D2E00E1AAC4 /* ImageViewController.swift */,
 				22592C991B289D2E00E1AAC4 /* Main.storyboard */,
 				22592C9C1B289D2E00E1AAC4 /* Images.xcassets */,
 				22592C9E1B289D2E00E1AAC4 /* LaunchScreen.xib */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22592C981B289D2E00E1AAC4 /* ViewController.swift in Sources */,
+				22592C981B289D2E00E1AAC4 /* ImageViewController.swift in Sources */,
 				22592C961B289D2E00E1AAC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +405,7 @@
 				22592CB11B289D2E00E1AAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22592CB21B289D2E00E1AAC4 /* Build configuration list for PBXNativeTarget "MemeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				22592CB41B289D2E00E1AAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
