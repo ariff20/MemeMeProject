@@ -8,21 +8,50 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
     
-    //override func viewWillAppear(animated:true) {
-        //self.viewWillAppear(animated)
+    @IBOutlet weak var texfieldtop: UITextField!
+    @IBOutlet weak var textfieldbottom: UITextField!
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName : UIColor.whiteColor(),
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName : 5.00
+    ]
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.subscribeToKeyboardNotifications()
        // let cameraButton = pickAnImageFromCamera(<,#sender: AnyObject#>))
         //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-    //}
+    }
+    override func  viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.unsubscribefromKeyboardNotifications()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissViewControllerAnimated(true, completion: nil)
+        texfieldtop.defaultTextAttributes = memeTextAttributes
+        textfieldbottom.defaultTextAttributes = memeTextAttributes
+        texfieldtop.delegate = self
+        textfieldbottom.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    func textFieldDidBeginEditing(texfieldtop: UITextField!,textfieldbottom : UITextField!) {
+        texfieldtop.placeholder = nil
+        textfieldbottom.placeholder = nil
+    }
+    func textFieldShouldReturn(texfieldtop: UITextField) -> Bool {
+        
+        texfieldtop.resignFirstResponder()
+        
+        return true
+    }
     
 
     @IBAction func pickAnImage(sender: AnyObject) {
@@ -45,6 +74,24 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.presentViewController(imagePickers, animated: true
             , completion: nil)
     }
+    func keyboardWillShow(notification: NSNotification){
+        self.view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    func 
+    func getKeyboardHeight(notification: NSNotification)->CGFloat
+    {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue
+        return keyboardSize.CGRectValue().height
+    }
+    
+    func subscribeToKeyboardNotifications(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+    }
+    func unsubscribefromKeyboardNotifications(){
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    }
+   
 
 }
 
