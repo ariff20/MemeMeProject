@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -29,9 +30,6 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="494" width="117" height="30"/>
-                                </variation>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3G8-fn-ZEy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -76,22 +74,22 @@
                                 <exclude reference="3G8-fn-ZEy"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="V4I-Qu-Fso"/>
+                                <exclude reference="sD6-si-qQZ"/>
+                                <exclude reference="ti2-Ae-EEh"/>
+                                <exclude reference="B1r-aM-AX5"/>
+                                <exclude reference="F5b-GK-Soz"/>
+                                <exclude reference="T2T-G2-fyZ"/>
+                                <exclude reference="EFd-Nj-rDH"/>
+                                <exclude reference="Xen-PL-1Gs"/>
+                                <exclude reference="ZhO-zb-s0g"/>
+                                <exclude reference="6eB-tU-ski"/>
+                                <exclude reference="CRv-wm-DX9"/>
+                                <exclude reference="lKL-gP-EXw"/>
                                 <exclude reference="8uO-Tv-nfI"/>
                                 <exclude reference="VqC-DR-koV"/>
                                 <exclude reference="YKB-hw-IA6"/>
                                 <exclude reference="k6Y-aI-uE8"/>
-                                <exclude reference="EFd-Nj-rDH"/>
-                                <exclude reference="Xen-PL-1Gs"/>
-                                <exclude reference="ZhO-zb-s0g"/>
-                                <exclude reference="B1r-aM-AX5"/>
-                                <exclude reference="F5b-GK-Soz"/>
-                                <exclude reference="T2T-G2-fyZ"/>
-                                <exclude reference="6eB-tU-ski"/>
-                                <exclude reference="CRv-wm-DX9"/>
-                                <exclude reference="lKL-gP-EXw"/>
-                                <exclude reference="V4I-Qu-Fso"/>
-                                <exclude reference="sD6-si-qQZ"/>
-                                <exclude reference="ti2-Ae-EEh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -102,22 +100,22 @@
                                 <include reference="3G8-fn-ZEy"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="V4I-Qu-Fso"/>
+                                <include reference="sD6-si-qQZ"/>
+                                <include reference="ti2-Ae-EEh"/>
+                                <include reference="B1r-aM-AX5"/>
+                                <include reference="F5b-GK-Soz"/>
+                                <include reference="T2T-G2-fyZ"/>
+                                <include reference="EFd-Nj-rDH"/>
+                                <include reference="Xen-PL-1Gs"/>
+                                <include reference="ZhO-zb-s0g"/>
+                                <include reference="6eB-tU-ski"/>
+                                <include reference="CRv-wm-DX9"/>
+                                <include reference="lKL-gP-EXw"/>
                                 <include reference="8uO-Tv-nfI"/>
                                 <include reference="VqC-DR-koV"/>
                                 <include reference="YKB-hw-IA6"/>
                                 <include reference="k6Y-aI-uE8"/>
-                                <include reference="EFd-Nj-rDH"/>
-                                <include reference="Xen-PL-1Gs"/>
-                                <include reference="ZhO-zb-s0g"/>
-                                <include reference="B1r-aM-AX5"/>
-                                <include reference="F5b-GK-Soz"/>
-                                <include reference="T2T-G2-fyZ"/>
-                                <include reference="6eB-tU-ski"/>
-                                <include reference="CRv-wm-DX9"/>
-                                <include reference="lKL-gP-EXw"/>
-                                <include reference="V4I-Qu-Fso"/>
-                                <include reference="sD6-si-qQZ"/>
-                                <include reference="ti2-Ae-EEh"/>
                             </mask>
                         </variation>
                     </view>
