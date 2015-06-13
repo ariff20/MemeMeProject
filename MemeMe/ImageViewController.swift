@@ -8,17 +8,21 @@
 
 import UIKit
 
+
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var texfieldtop: UITextField!
     @IBOutlet weak var textfieldbottom: UITextField!
+
     
-    
+    @IBOutlet weak var sharebutton: UIBarButtonItem!
+    var activityViewController : UIActivityViewController?
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSBackgroundColorAttributeName : UIColor.whiteColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName : 5.00
@@ -28,6 +32,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
         self.subscribeToKeyboardHideNotifications()
+        if imagePickerView == nil {
+            sharebutton.enabled = false
+                               }
+        
         //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     override func  viewWillDisappear(animated: Bool) {
@@ -40,6 +48,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissViewControllerAnimated(true, completion: nil)
+        texfieldtop.attributedPlaceholder = NSAttributedString(string:"TOP",
+            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        textfieldbottom.attributedPlaceholder = NSAttributedString(string:"BOTTOM",
+            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+       
         texfieldtop.defaultTextAttributes = memeTextAttributes
         textfieldbottom.defaultTextAttributes = memeTextAttributes
         texfieldtop.delegate = self
@@ -49,8 +62,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         // Do any additional setup after loading the view, typically from a nib.
     }
     func textFieldDidBeginEditing(texfieldtop: UITextField!,textfieldbottom : UITextField!) {
+        texfieldtop.textColor = UIColor.whiteColor()
+        textfieldbottom.textColor = UIColor.whiteColor()
         texfieldtop.placeholder = nil
         textfieldbottom.placeholder = nil
+        
+        
+        
+        
     }
     func textFieldShouldReturn(texfieldtop: UITextField) -> Bool {
         
@@ -59,6 +78,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         return true
     }
     
+   
 
     @IBAction func pickAnImage(sender: AnyObject) {
     
@@ -79,6 +99,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         imagePickers.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(imagePickers, animated: true
             , completion: nil)
+        
     }
     func keyboardWillShow(notification: NSNotification){
         self.view.frame.origin.y -= getKeyboardHeight(notification)
@@ -105,8 +126,38 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func unsubscribefromKeyboardNotifications(){
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
-   
+    
+    func save(){
+        var meme = MemeObject(TextField : texfieldtop.text! ,TextField2 : textfieldbottom.text!  ,Image : imagePickerView.image , memedImage : generateMemedImage())
+        
+     
+    
+        
+ 
+    }
+    
+    func generateMemedImage() -> UIImage {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return memedImage
+    }
+
+    
+    @IBAction func share(sender: UIBarButtonItem) {
+         var   memeedimage = generateMemedImage()
+         //var   items = save()
+
+         let activityViewController = UIActivityViewController(activityItems:[memeedimage] , applicationActivities: nil)
+            presentViewController(activityViewController, animated: true, completion: nil)
+        /*activityViewController.completionWithItemsHandler = {
+            (activity, success,items , error) in
+            println("Activity: \(activity) Success: \(success) Items: \(items) Error: \(error)")
+        }*/
+    
    
 
+}
 }
 

@@ -9,12 +9,9 @@
 import Foundation
 import UIKit
 
-class MemesEditorViewController
+class MemesEditorViewController: UITextFieldDelegate
 {
     
     
-    
-    func save(){
-        var meme = MemeObject(TextField : TextField ,TextField2 : TextField2 ,Image : Image , memedImage : memedImage)
-    }
+   
 }
