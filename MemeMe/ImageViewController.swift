@@ -16,8 +16,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var texfieldtop: UITextField!
     @IBOutlet weak var textfieldbottom: UITextField!
 
-    
     @IBOutlet weak var sharebutton: UIBarButtonItem!
+    
     var activityViewController : UIActivityViewController?
     
     let memeTextAttributes = [
@@ -34,7 +34,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.subscribeToKeyboardHideNotifications()
         if imagePickerView == nil {
             sharebutton.enabled = false
-                               }
+                    }
         
         //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
@@ -90,6 +90,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
         let selectedImage : UIImage = image
         imagePickerView.image=selectedImage
+        imagePickerView.contentMode = .ScaleAspectFit
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -130,31 +131,46 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func save(){
         var meme = MemeObject(TextField : texfieldtop.text! ,TextField2 : textfieldbottom.text!  ,Image : imagePickerView.image , memedImage : generateMemedImage())
         
-     
-    
         
+          (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
+        
+    
  
     }
     
     func generateMemedImage() -> UIImage {
+        self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.toolbarHidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
+        //UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.view.frame.size.height*0.7,self.view.frame.size.width), false, 0)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.toolbarHidden = false
         return memedImage
     }
 
+ 
     
     @IBAction func share(sender: UIBarButtonItem) {
-         var   memeedimage = generateMemedImage()
-         //var   items = save()
-
-         let activityViewController = UIActivityViewController(activityItems:[memeedimage] , applicationActivities: nil)
-            presentViewController(activityViewController, animated: true, completion: nil)
-        /*activityViewController.completionWithItemsHandler = {
-            (activity, success,items , error) in
-            println("Activity: \(activity) Success: \(success) Items: \(items) Error: \(error)")
-        }*/
+        var   memeedimage = generateMemedImage()
+        
+        
+        let activityViewController = UIActivityViewController(activityItems:[memeedimage] , applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
+    
+        activityViewController.completionWithItemsHandler = {
+            (activity, success, returneditems, error) in
+            println("Activity: \(activity) Success: \(success) Items: \(returneditems) Error: \(error)")
+            self.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+            let memevc:MemeTableViewController  = MemeTableViewController()
+            self.presentViewController(memevc, animated: true, completion: nil)
+    }
+   
     
    
 
