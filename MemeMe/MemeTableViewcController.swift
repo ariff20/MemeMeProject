@@ -13,15 +13,20 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
     var memesz: [MemeObject]!
     
     @IBOutlet weak var tableview: UITableView!
-     func viewWillAppear() {
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         let objects = UIApplication.sharedApplication().delegate as AppDelegate
         let appDelegate = objects as AppDelegate
         memesz = appDelegate.memes
+        tableView.reloadData()
     }
     override func viewDidLoad() {
         println(memesz)
         super.viewDidLoad()
         title = "Funniest Table In Town"
+        
         //tableview.registerClass(UITableViewCell.self,
             //forCellReuseIdentifier: "MemeCell")
         
@@ -34,7 +39,7 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
         }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableview.dequeueReusableCellWithIdentifier("MemeCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell")
             as UITableViewCell
         
             let memezrow =  memesz[indexPath.row]
@@ -48,7 +53,7 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetails") as MemeDetails
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("ViewMemePhotoViewController") as ViewMemePhotoViewController
         detailController.viewmemedimage = memesz[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
         

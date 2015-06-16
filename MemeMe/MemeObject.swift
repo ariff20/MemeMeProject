@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MemeObject
+struct MemeObject
 {
     var TextField : String!
     var TextField2 : String!

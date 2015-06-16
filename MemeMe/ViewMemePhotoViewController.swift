@@ -10,6 +10,10 @@ import UIKit
 
 class ViewMemePhotoViewController: UIViewController {
 
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     @IBAction func btnCancel(sender: AnyObject) {
         println("cancel")
         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -22,6 +26,9 @@ class ViewMemePhotoViewController: UIViewController {
     @IBAction func sharing(sender: AnyObject) {
     }
     @IBOutlet weak var imgview: UIImageView!
+    
+    var viewmemedimage : MemeObject
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
