@@ -12,13 +12,12 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
 {
     var memesz: [MemeObject]!
     
-    @IBOutlet weak var tableview: UITableView!
+
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let objects = UIApplication.sharedApplication().delegate as AppDelegate
-        let appDelegate = objects as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         memesz = appDelegate.memes
         tableView.reloadData()
     }
@@ -27,8 +26,7 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
         super.viewDidLoad()
         title = "Funniest Table In Town"
         
-        //tableview.registerClass(UITableViewCell.self,
-            //forCellReuseIdentifier: "MemeCell")
+        
         
     }
     
@@ -39,17 +37,13 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
         }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell")
-            as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell", forIndexPath: indexPath) as UITableViewCell
         
             let memezrow =  memesz[indexPath.row]
         
             cell.textLabel?.text = memezrow.TextField
             cell.imageView?.image =  (named: memezrow.memedImage)
-        
-        
-        
-        return cell
+            return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
