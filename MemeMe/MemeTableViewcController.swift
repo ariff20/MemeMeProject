@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeTableViewController : UITableViewController,UITableViewDelegate,UITableViewDataSource
+class MemeTableViewController : UIViewController,UITableViewDelegate,UITableViewDataSource
 {
     var memesz: [MemeObject]!
     
@@ -19,23 +19,24 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
         super.viewWillAppear(animated)
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         memesz = appDelegate.memes
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     override func viewDidLoad() {
         println(memesz)
         super.viewDidLoad()
         title = "Funniest Table In Town"
+        //self.tableView.registerClass(TableCellclass, forCellReuseIdentifier: "MemeCell")
         
         
         
     }
     
     
-       override func tableView(tableView : UITableView, numberOfRowsInSection section : Int)->Int
+       func tableView(tableView : UITableView, numberOfRowsInSection section : Int)->Int
        {
           return  memesz.count
         }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell", forIndexPath: indexPath) as UITableViewCell
         
@@ -45,7 +46,7 @@ class MemeTableViewController : UITableViewController,UITableViewDelegate,UITabl
             cell.imageView?.image =  (named: memezrow.memedImage)
             return cell
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("ViewMemePhotoViewController") as ViewMemePhotoViewController
         detailController.viewmemedimage = memesz[indexPath.row]

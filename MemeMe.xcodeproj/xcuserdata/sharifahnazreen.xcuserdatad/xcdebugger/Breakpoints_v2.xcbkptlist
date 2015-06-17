@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "455903517.869909"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "pickAnImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "455903517.869909"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "455998886.841789"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "pickAnImageFromCamera(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -135,7 +135,7 @@
                   symbolName = "MemeMe.ViewController.sharebutton.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIBarButtonItem&gt;"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.75125"
+                  timestampString = "456216455.029268"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -149,7 +149,7 @@
                   symbolName = "MemeMe.ViewController.sharebutton.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIBarButtonItem&gt;"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.751477"
+                  timestampString = "456216455.029525"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -163,7 +163,7 @@
                   symbolName = "MemeMe.ViewController.sharebutton.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIBarButtonItem&gt;"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.751668"
+                  timestampString = "456216455.029735"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -177,7 +177,7 @@
                   symbolName = "MemeMe.ViewController.init (MemeMe.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; MemeMe.ViewController"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.751839"
+                  timestampString = "456216455.02995"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -191,7 +191,7 @@
                   symbolName = "MemeMe.ViewController.init (MemeMe.ViewController.Type)() -&gt; MemeMe.ViewController"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.752009"
+                  timestampString = "456216455.030161"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -205,7 +205,7 @@
                   symbolName = "MemeMe.ViewController.init (MemeMe.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; MemeMe.ViewController"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.752178"
+                  timestampString = "456216455.030385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -222,11 +222,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "455903517.869909"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
             <Locations>
@@ -237,11 +237,11 @@
                   symbolName = "MemeMe.ViewController.viewDidLoad (MemeMe.ViewController)() -&gt; ()"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.754179"
+                  timestampString = "456216455.033484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
                   offsetFromSymbolStart = "110">
                </Location>
                <Location
@@ -251,11 +251,11 @@
                   symbolName = "reabstraction thunk helper from @callee_owned (@in ()) -&gt; (@out ()) to @callee_owned () -&gt; (@unowned ())"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.754338"
+                  timestampString = "456216455.033723"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
@@ -265,11 +265,11 @@
                   symbolName = "reabstraction thunk helper from @callee_owned () -&gt; (@unowned ()) to @callee_unowned @objc_block () -&gt; (@unowned ())"
                   moduleName = "MemeMe"
                   urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/ImageViewController.swift"
-                  timestampString = "456166238.754466"
+                  timestampString = "456216455.03395"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
                   offsetFromSymbolStart = "9">
                </Location>
             </Locations>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "456162396.329181"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "share(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "456162396.329181"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -418,11 +418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeCollectionViewController.swift"
-            timestampString = "456157560.012552"
+            timestampString = "456173491.881332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -434,11 +434,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -450,11 +450,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -473,106 +473,6 @@
             endingLineNumber = "16"
             landmarkName = "MemeCollectionViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.collectionview.getter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UICollectionView&gt;"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.758912"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.collectionview.setter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UICollectionView&gt;"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.759151"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.collectionview.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UICollectionView&gt;"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.759341"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "25">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.init (MemeMe.MemeCollectionViewController.Type)(collectionViewLayout : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UICollectionViewLayout&gt;) -&gt; MemeMe.MemeCollectionViewController"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.759532"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.init (MemeMe.MemeCollectionViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; MemeMe.MemeCollectionViewController"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.75972"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "95">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.init (MemeMe.MemeCollectionViewController.Type)() -&gt; MemeMe.MemeCollectionViewController"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.759902"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.MemeCollectionViewController.init (MemeMe.MemeCollectionViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; MemeMe.MemeCollectionViewController"
-                  moduleName = "MemeMe"
-                  urlString = "file:///Users/sharifahnazreen/Desktop/Ariff%20iOS%20Development%20Stuff/MemeMe/MemeMe/MemeCollectionViewController.swift"
-                  timestampString = "456166238.760067"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "55">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -582,11 +482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -598,11 +498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -614,11 +514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -630,11 +530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeTableViewcController.swift"
-            timestampString = "456170350.381301"
+            timestampString = "456172710.043099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -646,11 +546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/ImageViewController.swift"
-            timestampString = "456162396.329181"
+            timestampString = "456222322.720909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "generateMemedImage()"
             landmarkType = "5">
          </BreakpointContent>

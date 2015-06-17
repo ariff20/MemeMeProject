@@ -8,14 +8,15 @@
 
 import UIKit
 
-class MemeCollectionViewController : UICollectionViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class MemeCollectionViewController : UIViewController, UICollectionViewDataSource {
     
     
     var memes: [MemeObject]!
     
-    @IBOutlet var collectionview: UICollectionView!
     
-    func viewWillAppear() {
+    
+    override func viewWillAppear(animated : Bool) {
+        super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate as AppDelegate
         let appDelegate = object as AppDelegate
         memes = appDelegate.memes
@@ -23,25 +24,26 @@ class MemeCollectionViewController : UICollectionViewController,UICollectionView
     }
      override func viewDidLoad() {
         super.viewDidLoad()
-        
+        println(memes)
+        super.viewDidLoad()
+        title = "Funniest Collection In Town"
         
     }
-     func collectionView(collectionview : UICollectionView, numberofItemsInSection section : Int)->Int{
-        return 1
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return memes.count
     }
-     override func collectionView(collectionview: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+     func collectionView(collectionview: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
         {
             let cell = collectionview.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CollectionViewCell
-            let memezcell = memes[indexPath.item]
+           // let memezcell = memes[indexPath.item]
             //cell.setText(memezcell.TextField, bottomString : memezcell.TextField2)
             //cell.backgroundColor = UIColor.redColor()
-            let imageView = UIImageView(image: memezcell.Image)
-            cell.backgroundView = (named: imageView)
+            //let imageView = UIImageView(image: memezcell.Image)
+            //cell.backgroundView = (named: imageView)
             
     
-            /*let memezcell =  self.memes[indexPath.item]
-            cell.textLabel?.text = memezcell.TextField
-            cell.imageView?.image =  (named: memezcell.memedImage)*/
+            let memezcell =  self.memes[indexPath.item]
+            cell.imageviews.image =  (named: memezcell.memedImage)
         
         return cell
     }

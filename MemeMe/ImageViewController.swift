@@ -33,8 +33,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.subscribeToKeyboardNotifications()
         self.subscribeToKeyboardHideNotifications()
         if imagePickerView == nil {
-            sharebutton.enabled = false
-                    }
+            sharebutton.enabled = false}
         
         //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
@@ -152,6 +151,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
 
  
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
     
     @IBAction func share(sender: UIBarButtonItem) {
         var   memeedimage = generateMemedImage()
