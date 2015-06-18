@@ -11,42 +11,43 @@ import UIKit
 class MemeCollectionViewController : UIViewController, UICollectionViewDataSource {
     
     
-    var memes: [MemeObject]!
+    var memel: [MemeObject]!
     
     
     
     override func viewWillAppear(animated : Bool) {
         super.viewWillAppear(animated)
-        let object = UIApplication.sharedApplication().delegate as AppDelegate
-        let appDelegate = object as AppDelegate
-        memes = appDelegate.memes
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        memel = appDelegate.memes
+        
         self.tabBarController?.tabBar.hidden = false
     }
      override func viewDidLoad() {
         super.viewDidLoad()
-        println(memes)
-        super.viewDidLoad()
-        title = "Funniest Collection In Town"
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.hidesBarsOnTap = true
+        
         
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return memes.count
+        return memel.count
     }
      func collectionView(collectionview: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
         {
             let cell = collectionview.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CollectionViewCell
-           // let memezcell = memes[indexPath.item]
-            //cell.setText(memezcell.TextField, bottomString : memezcell.TextField2)
-            //cell.backgroundColor = UIColor.redColor()
-            //let imageView = UIImageView(image: memezcell.Image)
-            //cell.backgroundView = (named: imageView)
-            
-    
-            let memezcell =  self.memes[indexPath.item]
-            cell.imageviews.image =  (named: memezcell.memedImage)
+            let memezcell =  self.memel[indexPath.item]
+            cell.imageviews.image =  memezcell.memedImage
         
         return cell
     }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+    {
+        
+        let detailControllers = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as FullScreenMeme
+        detailControllers.meme = memel[indexPath.row]
+        self.navigationController!.pushViewController(detailControllers, animated: true)
+    }
+    
     
     
 }

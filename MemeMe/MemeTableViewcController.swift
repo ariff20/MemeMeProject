@@ -13,19 +13,24 @@ class MemeTableViewController : UIViewController,UITableViewDelegate,UITableView
     var memesz: [MemeObject]!
     
 
+    @IBOutlet var tableView: UITableView!
+    
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         memesz = appDelegate.memes
-        //tableView.reloadData()
+         tableView.reloadData()
     }
     override func viewDidLoad() {
-        println(memesz)
+         
+    
         super.viewDidLoad()
-        title = "Funniest Table In Town"
-        //self.tableView.registerClass(TableCellclass, forCellReuseIdentifier: "MemeCell")
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.hidesBarsOnTap = true
+        
+        
         
         
         
@@ -34,22 +39,25 @@ class MemeTableViewController : UIViewController,UITableViewDelegate,UITableView
     
        func tableView(tableView : UITableView, numberOfRowsInSection section : Int)->Int
        {
+        
           return  memesz.count
         }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemesCell", forIndexPath: indexPath) as UITableViewCell
         
-            let memezrow =  memesz[indexPath.row]
+        let memezrow =  memesz[indexPath.row]
+        println("WTF")
+        println(memezrow.TextField)
+        cell.textLabel?.text = memezrow.TextField
+        cell.imageView?.image = memezrow.memedImage
         
-            cell.textLabel?.text = memezrow.TextField
-            cell.imageView?.image =  (named: memezrow.memedImage)
             return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("ViewMemePhotoViewController") as ViewMemePhotoViewController
-        detailController.viewmemedimage = memesz[indexPath.row]
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as FullScreenMeme
+        detailController.meme = memesz[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }

@@ -34,13 +34,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.subscribeToKeyboardHideNotifications()
         if imagePickerView == nil {
             sharebutton.enabled = false}
+        self.navigationController?.setToolbarHidden(true, animated: true)
         
-        //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     override func  viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.unsubscribefromKeyboardNotifications()
         self.unsubscribefromKeyboardHideNotifications()
+        self.navigationController?.setToolbarHidden(false, animated: animated)
         
     }
     
@@ -49,6 +51,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.dismissViewControllerAnimated(true, completion: nil)
         texfieldtop.attributedPlaceholder = NSAttributedString(string:"TOP",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        
         textfieldbottom.attributedPlaceholder = NSAttributedString(string:"BOTTOM",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
        
@@ -138,10 +141,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     func generateMemedImage() -> UIImage {
-        self.navigationController?.navigationBar.hidden = true
-        self.navigationController?.toolbarHidden = true
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setToolbarHidden(true, animated: true)
         UIGraphicsBeginImageContext(self.view.frame.size)
-        //UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.view.frame.size.height*0.7,self.view.frame.size.width), false, 0)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -152,7 +155,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
  
     @IBAction func cancel(sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
