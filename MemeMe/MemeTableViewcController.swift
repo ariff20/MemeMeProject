@@ -30,30 +30,28 @@ class MemeTableViewController : UIViewController,UITableViewDelegate,UITableView
         navigationController?.hidesBarsOnSwipe = true
         navigationController?.hidesBarsOnTap = true
         
-        
-        
-        
-        
     }
     
-    
+    //reserves the number of rows needed to display the image
        func tableView(tableView : UITableView, numberOfRowsInSection section : Int)->Int
        {
         
           return  memesz.count
         }
+    //Reserves the row to be dequeued for display
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MemesCell", forIndexPath: indexPath) as UITableViewCell
         
         let memezrow =  memesz[indexPath.row]
-        println("WTF")
         println(memezrow.TextField)
         cell.textLabel?.text = memezrow.TextField
         cell.imageView?.image = memezrow.memedImage
         
             return cell
     }
+    
+    //Method to do something when the row is selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as FullScreenMeme

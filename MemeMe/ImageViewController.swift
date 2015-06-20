@@ -17,7 +17,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var textfieldbottom: UITextField!
 
     @IBOutlet weak var sharebutton: UIBarButtonItem!
+    @IBOutlet var toolbar: UIToolbar!
     
+    @IBOutlet var navbar: UINavigationBar!
     var activityViewController : UIActivityViewController?
     
     let memeTextAttributes = [
@@ -63,6 +65,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    //Set the placeholder to nil once the user begins editing
     func textFieldDidBeginEditing(texfieldtop: UITextField!,textfieldbottom : UITextField!) {
         texfieldtop.textColor = UIColor.whiteColor()
         textfieldbottom.textColor = UIColor.whiteColor()
@@ -73,6 +76,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         
     }
+    //Dismiss the keyboard when the user hits return
     func textFieldShouldReturn(texfieldtop: UITextField) -> Bool {
         
         texfieldtop.resignFirstResponder()
@@ -81,7 +85,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
    
-
+   //Method to choose an image from the device's album
     @IBAction func pickAnImage(sender: AnyObject) {
     
         let pickercontroller = UIImagePickerController()
@@ -89,6 +93,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         pickercontroller.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(pickercontroller, animated: true, completion: nil)
     }
+    
+    //Setting the chosen image to a variable
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
         let selectedImage : UIImage = image
         imagePickerView.image=selectedImage
@@ -96,6 +102,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //Method to choose an image from the device's album
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         let imagePickers = UIImagePickerController()
         imagePickers.delegate = self
@@ -104,18 +111,22 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             , completion: nil)
         
     }
+    //Moves the view up when the keyboard appears
     func keyboardWillShow(notification: NSNotification){
         self.view.frame.origin.y -= getKeyboardHeight(notification)
     }
+    //Moves the view down when the user dismisses the keyboard
     func keyboardWillHide(notifications: NSNotification){
         self.view.frame.origin.y += getKeyboardHeight(notifications)
     }
+    //Gets the Keyboard Height to be substracted or added
     func getKeyboardHeight(notification: NSNotification)->CGFloat
     {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue
         return keyboardSize.CGRectValue().height
     }
+    //Notifications to tell you when the keyboard appears
     func subscribeToKeyboardHideNotifications(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -129,7 +140,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func unsubscribefromKeyboardNotifications(){
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
-    
+    //Generates a Meme Object
     func save(){
         var meme = MemeObject(TextField : texfieldtop.text ,TextField2 : textfieldbottom.text  ,Image : imagePickerView.image! , memedImage : generateMemedImage())
         
@@ -139,26 +150,26 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
  
     }
-    
+    //Generates the memed Image
     func generateMemedImage() -> UIImage {
         
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationController?.setToolbarHidden(true, animated: true)
+        self.navbar.hidden = true
+        self.toolbar.hidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.navigationController?.navigationBar.hidden = false
-        self.navigationController?.toolbarHidden = false
+        self.navbar.hidden = false
+        self.toolbar.hidden = true
         return memedImage
     }
 
- 
+    //dismisses the view controller
     @IBAction func cancel(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
-    
+    //Launches the activity view controller for the user to share the image
     @IBAction func share(sender: UIBarButtonItem) {
         var   memeedimage = generateMemedImage()
         

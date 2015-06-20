@@ -29,9 +29,12 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDataSourc
         
         
     }
+    ////Reserves the number of cells needed to display the image
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memel.count
     }
+    
+    //Reserves the cell to be dequeued for display
      func collectionView(collectionview: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
         {
             let cell = collectionview.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CollectionViewCell
@@ -40,6 +43,7 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDataSourc
         
         return cell
     }
+    //Method to do something when the cell is selected
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
         
