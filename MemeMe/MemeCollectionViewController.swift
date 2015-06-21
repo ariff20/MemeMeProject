@@ -17,7 +17,7 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDataSourc
     
     override func viewWillAppear(animated : Bool) {
         super.viewWillAppear(animated)
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         memel = appDelegate.memes
         
         self.tabBarController?.tabBar.hidden = false
@@ -37,7 +37,7 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDataSourc
     //Reserves the cell to be dequeued for display
      func collectionView(collectionview: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
         {
-            let cell = collectionview.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CollectionViewCell
+            let cell = collectionview.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
             let memezcell =  self.memel[indexPath.item]
             cell.imageviews.image =  memezcell.memedImage
         
@@ -47,7 +47,7 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
         
-        let detailControllers = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as FullScreenMeme
+        let detailControllers = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as! FullScreenMeme
         detailControllers.meme = memel[indexPath.row]
         self.navigationController!.pushViewController(detailControllers, animated: true)
     }

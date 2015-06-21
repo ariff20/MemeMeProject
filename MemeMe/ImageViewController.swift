@@ -24,10 +24,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
-        NSBackgroundColorAttributeName : UIColor.whiteColor(),
+        //NSBackgroundColorAttributeName : UIColor.whiteColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 5.00
+        NSStrokeWidthAttributeName : -1.00
     ]
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +59,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
        
         texfieldtop.defaultTextAttributes = memeTextAttributes
         textfieldbottom.defaultTextAttributes = memeTextAttributes
+        texfieldtop.borderStyle = UITextBorderStyle.None
+        textfieldbottom.borderStyle = UITextBorderStyle.None
         texfieldtop.delegate = self
         textfieldbottom.delegate = self
         
@@ -95,11 +97,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     //Setting the chosen image to a variable
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
         let selectedImage : UIImage = image
         imagePickerView.image=selectedImage
         imagePickerView.contentMode = .ScaleAspectFit
-        self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)}
     }
     
     //Method to choose an image from the device's album
@@ -113,17 +117,19 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     //Moves the view up when the keyboard appears
     func keyboardWillShow(notification: NSNotification){
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        self.view.frame.origin.y = -getKeyboardHeight(notification)
     }
     //Moves the view down when the user dismisses the keyboard
     func keyboardWillHide(notifications: NSNotification){
-        self.view.frame.origin.y += getKeyboardHeight(notifications)
+        
+         self.view.frame.origin.y = 0
+        
     }
     //Gets the Keyboard Height to be substracted or added
     func getKeyboardHeight(notification: NSNotification)->CGFloat
     {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.CGRectValue().height
     }
     //Notifications to tell you when the keyboard appears
@@ -142,10 +148,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     //Generates a Meme Object
     func save(){
-        var meme = MemeObject(TextField : texfieldtop.text ,TextField2 : textfieldbottom.text  ,Image : imagePickerView.image! , memedImage : generateMemedImage())
+        var meme = MemeObject(textField : texfieldtop.text ,textField2 : textfieldbottom.text  ,image : imagePickerView.image! , memedImage : generateMemedImage())
         
         
-          (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
+          (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
         
     
  
@@ -160,7 +166,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.navbar.hidden = false
-        self.toolbar.hidden = true
+        self.toolbar.hidden = false
         return memedImage
     }
 

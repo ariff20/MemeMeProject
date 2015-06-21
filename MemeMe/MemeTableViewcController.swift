@@ -18,11 +18,13 @@ class MemeTableViewController : UIViewController,UITableViewDelegate,UITableView
     
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        memesz = appDelegate.memes
-         tableView.reloadData()
+        
+            super.viewWillAppear(animated)
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            memesz = appDelegate.memes
+            tableView.reloadData()
     }
+    
     override func viewDidLoad() {
          
     
@@ -35,18 +37,17 @@ class MemeTableViewController : UIViewController,UITableViewDelegate,UITableView
     //reserves the number of rows needed to display the image
        func tableView(tableView : UITableView, numberOfRowsInSection section : Int)->Int
        {
-        
-          return  memesz.count
+            return  memesz.count
         }
     //Reserves the row to be dequeued for display
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MemesCell", forIndexPath: indexPath) as UITableViewCell
+        let cell:TableViewzCell = tableView.dequeueReusableCellWithIdentifier("MemesCell", forIndexPath: indexPath) as! TableViewzCell
         
         let memezrow =  memesz[indexPath.row]
-        println(memezrow.TextField)
-        cell.textLabel?.text = memezrow.TextField
-        cell.imageView?.image = memezrow.memedImage
+        cell.label1.text = memezrow.textField
+        cell.label2.text = memezrow.textField2
+        cell.imageview.image = memezrow.memedImage
         
             return cell
     }
@@ -54,7 +55,7 @@ class MemeTableViewController : UIViewController,UITableViewDelegate,UITableView
     //Method to do something when the row is selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as FullScreenMeme
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("FullScreenMeme") as! FullScreenMeme
         detailController.meme = memesz[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
         
